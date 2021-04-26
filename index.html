@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Zackbox.TV</title>
+    <style>
+body {
+  background: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* beauty is in the eye of the beholder */
+  color: red;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: bold;
+  font-size: 34px;
+}
+
+a {
+  color: red;
+  font-weight: bold;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Zackbox.tv</h1>
+    <img src="assets/images/zackbox.png" width="500">
+    <p>This is Zack.</p>
+
+    <a href="https://jackbox.tv">Are you looking for Jackbox.tv?</a>
+    <p>We'll redirect you automatically in <span id="redirect-countdown">5</span> seconds.</p>
+
+    <p>This domain is for sale. Starting bid:</p>
+    <img src="assets/images/100-billion-dollars.jpg" width="500">
+
+  <script>
+    const $ = (s) => document.querySelector(s);
+    window.addEventListener('load', () => {
+      let remainingTime = 5;
+      setInterval(() => {
+        $('#redirect-countdown').innerText = remainingTime;
+        if (remainingTime === 0) {
+          window.location.href = "https://jackbox.tv"
+        }
+        remainingTime -= 1;
+      }, 1000)
+      $()
+    })
+  </script>
+  </body>
+</html>
